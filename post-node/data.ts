@@ -7,11 +7,13 @@ function getData() {
     const prisma = new PrismaClient();
     
     app.post('/createPost', async(req: Request, res: Response) => {
-        const{title,description} = req.body;
+        const{title,description,likes,dislikes} = req.body;
         const post = await prisma.post.create({
             data: {
                 title: title,
-              description: description
+              description: description,
+              likes: likes,
+              dislikes: dislikes
             },
         });
         res.json(post);

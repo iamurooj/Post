@@ -7,7 +7,7 @@ import { getData } from "./data";
 
 function startServer({ port = process.env.PORT } = {}) {
   const app = express();
-
+  //app.use(cors());
   // Serve the static files from the React app
   app.use(express.static(path.join(__dirname, "../build")));
 
@@ -82,3 +82,7 @@ function setupCloseOnExit(server: Server) {
   process.on("uncaughtException", exitHandler.bind(null, { exit: true }));
 }
 export { startServer };
+  function cors(): any {
+    throw new Error("Function not implemented.");
+  }
+
