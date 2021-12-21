@@ -6,8 +6,8 @@ import logger from "loglevel";
 import { getData } from "./data";
 
 function startServer({ port = process.env.PORT } = {}) {
+  //const cors = require('cors');
   const app = express();
-  //app.use(cors());
   // Serve the static files from the React app
   app.use(express.static(path.join(__dirname, "../build")));
 
